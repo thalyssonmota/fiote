@@ -9,12 +9,13 @@ import { FcGoogle } from "react-icons/fc";
 
 
 
+
 export default function Login() {
   return (
     <PageWrapper showButton={false}>
       <div className="w-full h-full flex items-center justify-center mb-12">
         <div className="w-[50%] h-full mt-16 flex flex-col items-center justify-center gap-10 bg-[#f0f0f0] py-10 px-30 rounded-2xl shadow-lg">
-          <h1 className="text-[32px] m-2 bg-gradient-to-r tracking-wider from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans pb-6">Faça Login</h1>
+          <h1 className="text-[36px] m-2 bg-gradient-to-r tracking-wider from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans pb-6">Faça Login</h1>
           <CustomInput
             icon={<FaUser size={16} color="#1f3b57" />}
             type="email"

@@ -12,7 +12,7 @@ import { PiMedalDuotone } from "react-icons/pi";
 export default function Register() {
   return (
     <PageWrapper>
-      <div className="w-full h-auto flex items-center justify-center p-5 mb-5">
+      <div className="w-full h-auto flex items-center justify-center p-5 mb-5 tracking-wider">
         <div className="h-full w-[60%] p-5 flex flex-col justify-center rounded-2xl items-center bg-[#f0f0f0]">
           <h1 className=" text-[32px] m-2 bg-gradient-to-r tracking-wider from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans pb-6">Cadastre-se</h1>
 
@@ -112,7 +112,7 @@ export default function Register() {
 
           </form>
 
-          <button className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] text-[#f0f0f0] font-bold font-sans text-[22px] cursor-pointer my-6 rounded-3xl w-[140px] h-[50px] transition-all duration-300 hover:scale-110">
+          <button className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] text-[#f0f0f0]  font-bold font-sans text-[22px] cursor-pointer my-6 rounded-3xl w-[140px] h-[50px] transition-all duration-300 hover:scale-110">
             Criar Conta
           </button>
         </div>
