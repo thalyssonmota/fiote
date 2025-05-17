@@ -17,8 +17,8 @@ export default function Login() {
         <div className="w-[50%] h-full mt-16 flex flex-col items-center justify-center gap-8 bg-[#f0f0f0] py-10 px-30 rounded-2xl shadow-lg">
           <h1 className="text-[36px] m-2 bg-gradient-to-r  from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans">Faça Login</h1>
 
-          <CustomInput 
-          className="relative"
+          <CustomInput
+            className="relative"
             icon={<FaUser size={16} color="#1f3b57" />}
             type="email"
             label="Usuário ou Email"

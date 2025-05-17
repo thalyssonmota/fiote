@@ -62,7 +62,7 @@ export default function Register() {
 
             </div>
 
-        <h2 className=" text-[26px] flex items-center gap-3 m-3 bg-gradient-to-r tracking-wider from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans"><FaDog size={20} color="#1f3b57" /> Cadastro do Pet</h2>
+            <h2 className=" text-[26px] flex items-center gap-3 m-3 bg-gradient-to-r tracking-wider from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans"><FaDog size={20} color="#1f3b57" /> Cadastro do Pet</h2>
 
             <div className="w-full flex p-2 gap-6">
 
@@ -71,7 +71,8 @@ export default function Register() {
                   icon={<FaDog size={20} color="#1f3b57" />}
                   type="text"
                   label="Nome do Pet"
-                  placeholder="Digite o nome do seu pet" />
+                  placeholder="Digite o nome do seu pet"
+                />
 
 
                 <h4 className="bg-gradient-to-r flex items-center gap-2 from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[20px]">
@@ -81,14 +82,14 @@ export default function Register() {
                   <label
                     className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px]">
                     <input
-                      className=""
+                      className="appearance-none w-4 h-4 rounded-full border-1 border-gray-400 checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] checked:border-blue-500 focus:outline-none"
                       type="checkbox" />
                     Sim
                   </label>
                   <label
                     className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px]">
                     <input
-                      className=""
+                      className="appearance-none w-4 h-4 rounded-full border-1 border-gray-400 checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] checked:border-blue-500 focus:outline-none"
                       type="checkbox" />
                     Não
                   </label>
@@ -112,14 +113,14 @@ export default function Register() {
                   <label
                     className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px]">
                     <input
-                      className=""
+                      className="appearance-none w-4 h-4 rounded-full border-1 border-gray-400 checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] checked:border-blue-500 focus:outline-none"
                       type="checkbox" />
                     Fêmea
                   </label>
                   <label
                     className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px]">
                     <input
-                      className=""
+                      className="appearance-none w-4 h-4 rounded-full border-1 border-gray-400 checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] checked:border-blue-500 focus:outline-none"
                       type="checkbox" />
                     Macho
                   </label>
@@ -131,10 +132,7 @@ export default function Register() {
           <button className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[26px] cursor-pointer my-6 rounded-3xl w-auto h-[50px] transition-all duration-300 hover:scale-110">
             Criar Conta
           </button>
-
         </div>
-
-
       </div>
     </PageWrapper >
   )
