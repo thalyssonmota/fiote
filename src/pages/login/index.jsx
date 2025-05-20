@@ -34,24 +34,23 @@ export default function Login() {
 
           <div className="flex  gap-3 items-center">
             <h5 className="text-[16px] bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans">Esqueceu sua senha?</h5>
-            <button className="text-[#f0f0f0] text-[16px] bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] w-auto p-1 rounded-full cursor-pointer tracking-wider transition-all duration-300 hover:scale-120">Clique aqui</button>
+            <button className="text-[#f0f0f0] text-[16px] bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] w-auto p-1 rounded-full cursor-pointer tracking-wider transition delay-150 duration-300 hover:scale-120">Clique aqui</button>
           </div>
 
           <div className="flex items-center gap-3">
             <h4 className="text-[16px] bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans">Não tem uma conta?</h4>
             <button
               onClick={() => window.location.href = "/register"}
-              className="text-[#f0f0f0] text-[16px] bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] w-auto p-1 rounded-full cursor-pointer tracking-wider transition-all duration-300 hover:scale-120">Cadastre-se</button>
+              className="text-[#f0f0f0] text-[16px] bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] w-auto p-1 rounded-full cursor-pointer tracking-wider transition delay-150 duration-300 hover:scale-120">Cadastre-se</button>
           </div>
 
 
-          <button className="flex items-center gap-3 text-[16px] bg-gradient-to-r from-pink-500 via-purple-500 bg-clip-text text-transparent tracking-wider font-bold font-sans to-[#1f3b57] w-auto rounded-full cursor-pointer transition-all duration-300 hover:scale-120"><FcGoogle size={26} /> Login com Google</button>
+          <button className="flex items-center gap-3 text-[16px] bg-gradient-to-r from-pink-500 via-purple-500 bg-clip-text text-transparent tracking-wider font-bold font-sans to-[#1f3b57] w-auto rounded-full cursor-pointer transition delay-150 duration-300 hover:scale-120"><FcGoogle size={26} /> Login com Google</button>
 
-          <button className=" flex items-center gap-3 text-[16px] bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent tracking-wider font-bold font-sans w-auto cursor-pointer transition-all duration-300 hover:scale-120"><FaFacebookSquare size={26} color="#1877F2" /> Login com Facebook</button>
+          <button className=" flex items-center gap-3 text-[16px] bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent tracking-wider font-bold font-sans w-auto cursor-pointer transition delay-150 duration-300 hover:scale-120"><FaFacebookSquare size={26} color="#1877F2" /> Login com Facebook</button>
 
-          <button className=" flex items-center gap-3 text-[16px] bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent tracking-wider font-bold font-sans w-auto rounded-full cursor-pointer transition-all duration-300 hover:scale-120"> <FaApple size={26} color="#000000" /> Login com Apple</button>
+          <button className=" flex items-center gap-3 text-[16px] bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent tracking-wider font-bold font-sans w-auto rounded-full cursor-pointer transition delay-150 duration-300 hover:scale-120"> <FaApple size={26} color="#000000" /> Login com Apple</button>
         </div>
-
       </div>
     </PageWrapper >
   )

@@ -4,16 +4,18 @@ import { FaLocationDot } from "react-icons/fa6";
 import { CgGenderMale } from "react-icons/cg";
 import { PiMedalDuotone } from "react-icons/pi";
 import { BsFillArrowThroughHeartFill } from "react-icons/bs";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 
 export default function CardPuppy() {
   return (
     <div className="w-[350px] h-[450px] bg-[#fefefe] rounded-lg flex p-3 shadow-lg shadow-[#1f3b57]">
       <div className="h-full w-full flex flex-col">
-        <div className=" h-[60%] w-full  rounded-t-lg">
+        <div className=" h-[60%] w-full  rounded-t-lg snape-x">
           <img
             className="rounded-t-lg w-full h-full object-cover"
-            src="https://i.pinimg.com/736x/21/88/42/218842b8a07451b8013e5354fd1b81f4.jpg"
+            src="./img/border1.jpg"
             alt="Imagem do Cachorro" />
         </div>
         <div className="w-full h-[15%] flex justify-between items-center py-2 px-4">
@@ -21,7 +23,7 @@ export default function CardPuppy() {
           <CgGenderMale size={40} color="#1f3b57" />
         </div>
         <div className="w-full h-[10%] flex justify-between items-center py-1 px-1">
-          <p className="flex items-baseline bg-gradient-to-r w-[50%] from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px] truncate whitespace-nowrap overflow-hidden"> <FaLocationDot size={20} color="#1f3b57"/> - Fortaleza</p>
+          <p className="flex items-baseline bg-gradient-to-r w-[50%] from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px] truncate whitespace-nowrap overflow-hidden"> <FaLocationDot size={20} color="#1f3b57" /> - Fortaleza</p>
           <p className="w-[50%] bg-gradient-to-r text-[18px] truncate whitespace-nowrap overflow-hidden from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans">Raça: Border Collie</p>
         </div>
         <div className="w-full h-[0.5%] bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] my-1"></div>

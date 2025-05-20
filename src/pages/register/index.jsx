@@ -8,6 +8,8 @@ import { CiCalendarDate } from "react-icons/ci";
 import { FaTransgender } from "react-icons/fa";
 import { PiMedalDuotone } from "react-icons/pi";
 import { GoPencil } from "react-icons/go";
+import CustomSelect from "@/components/CustomSelect";
+import { HiChip } from "react-icons/hi";
 
 
 
@@ -19,7 +21,7 @@ export default function Register() {
           <h1 className=" text-[32px] m-2 flex gap-3 items-center bg-gradient-to-r tracking-wider from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans pb-6"> <GoPencil size={26} color="#1f3b57" /> Cadastre-se</h1>
 
           <form
-            className="w-full h-auto flex items-center flex-col gap-4 bg-[#F0F0F0] rounded-2xl p-6 border-1 border-purple-500 shadow-lg"
+            className="w-full h-auto flex items-center flex-col gap-4 bg-[#F0F0F0] rounded-2xl p-6 border-1 border-purple-500 shadow-xl shadow-purple-500/50"
           >
             <h2 className=" text-[26px] flex items-center gap-3 m-3 bg-gradient-to-r tracking-wider from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans"><FaUser size={20} color="#1f3b57" /> Cadastro do Tutor</h2>
 
@@ -51,7 +53,7 @@ export default function Register() {
 
                 <CustomInput
                   icon={<CiCalendarDate size={20} color="#1f3b57" />}
-                  type="number"
+                  type="date"
                   label="Sua Data de Nascimento"
                   placeholder="Digite sua data de nascimento"
                 />
@@ -75,25 +77,44 @@ export default function Register() {
                 />
 
 
-                <h4 className="bg-gradient-to-r flex items-center gap-2 from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[20px]">
+                <h4 className="bg-gradient-to-r flex items-center gap-2 from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px]">
                   <PiMedalDuotone size={20} color="#1f3b57" />
                   Pedigree</h4>
                 <div className=" flex gap-4 ">
                   <label
                     className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px]">
                     <input
-                      className="appearance-none w-4 h-4 rounded-full border-1 border-gray-400 checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] checked:border-blue-500 focus:outline-none"
+                      className="appearance-none w-4 h-4 text-[18px] rounded-full border-1 border-gray-400 checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] checked:border-blue-500 focus:outline-none"
                       type="checkbox" />
                     Sim
                   </label>
                   <label
                     className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px]">
                     <input
-                      className="appearance-none w-4 h-4 rounded-full border-1 border-gray-400 checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] checked:border-blue-500 focus:outline-none"
+                      className="appearance-none w-4 h-4 text-[18px] rounded-full border-1 border-gray-400 checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] checked:border-blue-500 focus:outline-none"
                       type="checkbox" />
                     Não
                   </label>
 
+                </div>
+                <h4 className="bg-gradient-to-r flex items-center gap-2 from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px]">
+                  <HiChip size={20} color="#1f3b57" />
+                  Possui Microchip</h4>
+                <div className=" flex gap-4 ">
+                  <label
+                    className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px]">
+                    <input
+                      className="appearance-none w-4 h-4 text-[18px] rounded-full border-1 border-gray-400 checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] checked:border-blue-500 focus:outline-none"
+                      type="checkbox" />
+                    Sim
+                  </label>
+                  <label
+                    className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px]">
+                    <input
+                      className="appearance-none w-4 h-4 text-[18px] rounded-full border-1 border-gray-400 checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] checked:border-blue-500 focus:outline-none"
+                      type="checkbox" />
+                    Não
+                  </label>
                 </div>
               </div>
 
@@ -106,30 +127,39 @@ export default function Register() {
                   placeholder="Digite a idade do seu pet"
                 />
 
-                <h4 className="flex items-center gap-2 bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[20px]">
+                <h4 className="flex items-center gap-2 bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px]">
                   <FaTransgender size={20} color="#1f3b57" />
                   Gênero</h4>
                 <div className=" flex gap-4 ">
                   <label
                     className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px]">
                     <input
-                      className="appearance-none w-4 h-4 rounded-full border-1 border-gray-400 checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] checked:border-blue-500 focus:outline-none"
+                      className="appearance-none w-4 h-4 text-[18px] rounded-full border-1 border-gray-400 checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] checked:border-blue-500 focus:outline-none"
                       type="checkbox" />
                     Fêmea
                   </label>
                   <label
                     className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px]">
                     <input
-                      className="appearance-none w-4 h-4 rounded-full border-1 border-gray-400 checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] checked:border-blue-500 focus:outline-none"
+                      className="appearance-none w-4 h-4 text-[18px] rounded-full border-1 border-gray-400 checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] checked:border-blue-500 focus:outline-none"
                       type="checkbox" />
                     Macho
                   </label>
+                </div>
+                <div className="w-[60%]">
+                  <CustomSelect
+                    onChange={() => { }}
+                    label="Raça"
+                    icon={<FaDog size={20} color="#1f3b57" />}
+                    options={["Border Collie", "Pastor Alemão", "Bulldog", "Poodle", "Shih Tzu", "Yorkshire", "Labrador", "Golden Retriever", "Beagle", "Pitbull", "Chihuahua", "Dachshund", "Cocker Spaniel", "Rottweiler", "Schnauzer"]}
+                  />
+
                 </div>
               </div>
             </div>
           </form>
 
-          <button className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] text-white p-1 font-bold font-sans text-[26px] cursor-pointer my-6 rounded-3xl w-auto h-[50px] transition-all duration-300 hover:scale-110">
+          <button className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] text-white p-1 font-bold font-sans text-[26px] cursor-pointer my-6 rounded-3xl w-auto h-[50px] transition delay-150 duration-300 hover:scale-110">
             Criar Conta
           </button>
         </div>
