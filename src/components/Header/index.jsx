@@ -3,7 +3,7 @@ import { LuDog } from "react-icons/lu";
 
 export default function Header({showButton = true} ) {
   return (
-    <header className="w-full h-[15vh] text-[#f0f0f0] flex items-baseline p-6 bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57]">
+    <header className="w-full h-[15vh] text-[#f0f0f0] flex items-baseline p-6 bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] ">
       <div
       onClick={() => window.location.href = "/"} 
       className="w-[20%] h-full flex justify-center cursor-pointer transition-all duration-300 hover:scale-120">

@@ -5,26 +5,33 @@ import { CgGenderMale } from "react-icons/cg";
 import { PiMedalDuotone } from "react-icons/pi";
 import { BsFillArrowThroughHeartFill } from "react-icons/bs";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+import { useRouter } from "next/router";
 
 
-export default function CardPuppy() {
+export default function CardPuppy({dog}) {
+  
+  const router = useRouter()
+      function click(){
+        router.push(`/details/${dog.id}`)
+      }
   return (
-    <div className="w-[350px] h-[450px] bg-[#fefefe] rounded-lg flex p-3 shadow-lg shadow-[#1f3b57]">
+        
+
+    <div onClick={click} className="w-[350px] h-[450px] bg-[#fefefe] max-md:bg-amber-500 rounded-lg flex p-3 shadow-lg shadow-[#1f3b57]">
       <div className="h-full w-full flex flex-col">
         <div className=" h-[60%] w-full  rounded-t-lg snape-x">
           <img
             className="rounded-t-lg w-full h-full object-cover"
-            src="./img/border1.jpg"
+            src={dog.foto}
             alt="Imagem do Cachorro" />
         </div>
         <div className="w-full h-[15%] flex justify-between items-center py-2 px-4">
-          <h1 className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[22px]">Thor</h1>
+          <h1 className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[22px]">{dog.nome}</h1>
           <CgGenderMale size={40} color="#1f3b57" />
         </div>
         <div className="w-full h-[10%] flex justify-between items-center py-1 px-1">
-          <p className="flex items-baseline bg-gradient-to-r w-[50%] from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px] truncate whitespace-nowrap overflow-hidden"> <FaLocationDot size={20} color="#1f3b57" /> - Fortaleza</p>
-          <p className="w-[50%] bg-gradient-to-r text-[18px] truncate whitespace-nowrap overflow-hidden from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans">Raça: Border Collie</p>
+          <p className="flex items-baseline bg-gradient-to-r w-[50%] from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px] truncate whitespace-nowrap overflow-hidden"> <FaLocationDot size={20} color="#1f3b57" /> - {dog.cidade}</p>
+          <p className="w-[50%] bg-gradient-to-r text-[18px] truncate whitespace-nowrap overflow-hidden from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans">Raça: {dog.raca}</p>
         </div>
         <div className="w-full h-[0.5%] bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] my-1"></div>
         <div className="w-full h-[14.5%] flex gap-8 justify-around items-center py-1 px-1">

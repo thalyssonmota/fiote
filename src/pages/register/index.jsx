@@ -10,10 +10,26 @@ import { PiMedalDuotone } from "react-icons/pi";
 import { GoPencil } from "react-icons/go";
 import CustomSelect from "@/components/CustomSelect";
 import { HiChip } from "react-icons/hi";
+import { useState } from "react";
 
 
 
 export default function Register() {
+  const [cpf, setCpf] = useState("");
+
+  const handleCpfChange = (e) => {
+    let value = e.target.value.replace(/\D/g, ""); // Remove não números
+    value = value.slice(0, 11); // Limita a 11 dígitos
+
+    // Aplica a máscara
+    value = value
+      .replace(/(\d{3})(\d)/, "$1.$2")
+      .replace(/(\d{3})(\d)/, "$1.$2")
+      .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+
+    setCpf(value);
+  };
+
   return (
     <PageWrapper>
       <div className="w-full h-auto flex items-center justify-center p-5 mb-5 tracking-wider">
@@ -46,9 +62,11 @@ export default function Register() {
 
                 <CustomInput
                   icon={<FaUser size={16} color="#1f3b57" />}
-                  type="number"
+                  type="text"
                   label="Seu CPF"
-                  placeholder="Digite seu CPF"
+                  placeholder="000.000.000-00"
+                  value={cpf}
+                  onChange={handleCpfChange}
                 />
 
                 <CustomInput
