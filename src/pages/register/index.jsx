@@ -15,10 +15,10 @@ import { toast, ToastContainer } from "react-toastify";
 import { redirect } from "next/dist/server/api-utils";
 import { useRouter } from "next/router";
 
-
+// ...imports (sem alterações)
 
 export default function Register() {
-  const router = useRouter()
+  const router = useRouter();
 
   const [cpf, setCpf] = useState("");
   const [pedigree, setPedigree] = useState(""); // "sim" ou "nao"
@@ -42,10 +42,8 @@ export default function Register() {
     if (!petRaca) return toast.error("Selecione a raça");
 
     toast.success("Conta criada com sucesso!");
-    router.push("/dogs")
+    router.push("/dogs");
   };
-
-
 
   const handleCpfChange = (e) => {
     let value = e.target.value.replace(/\D/g, ""); // Remove não números
@@ -65,12 +63,12 @@ export default function Register() {
       <ToastContainer />
       <div className="w-full h-auto flex items-center justify-center p-5 mb-5 tracking-wider">
         <div className="w-full max-w-6xl px-4 py-5 flex flex-col justify-center rounded-2xl items-center bg-[#f0f0f0]">
-          <h1 className=" text-[32px] m-2 flex gap-3 items-center bg-gradient-to-r tracking-wider from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans pb-6"> <GoPencil size={26} color="#1f3b57" /> Cadastre-se</h1>
+          <h1 className="text-[32px] m-2 flex gap-3 items-center bg-gradient-to-r tracking-wider from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans pb-6">
+            <GoPencil size={26} color="#1f3b57" /> Cadastre-se
+          </h1>
 
-          <form
-            className="w-full h-auto flex items-center flex-col gap-4 bg-[#F0F0F0] rounded-2xl p-6 border-1 border-purple-500 shadow-xl shadow-purple-500/50"
-          >
-            <h2 className="text-[26px] flex items-center gap-3 m-3 whitespace-nowrap bg-gradient-to-r tracking-wider from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans">
+          <form className="w-full flex flex-col gap-4 p-6 rounded-2xl border-1 border-purple-500 shadow-xl shadow-purple-500/50 bg-[#f0f0f0]">
+            <h2 className="text-[26px] flex items-center gap-3 m-3 bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans">
               <FaUser size={20} color="#1f3b57" />
               Cadastro do Tutor
             </h2>
@@ -84,7 +82,6 @@ export default function Register() {
                   placeholder="Digite seu nome"
                   onChange={(e) => setNome(e.target.value)}
                 />
-
                 <CustomInput
                   icon={<MdOutlineEmail size={20} color="#1f3b57" />}
                   type="email"
@@ -92,7 +89,6 @@ export default function Register() {
                   placeholder="Digite seu email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
-
               </div>
 
               <div className="w-full lg:w-1/2 flex flex-col gap-6">
@@ -104,18 +100,16 @@ export default function Register() {
                   value={cpf}
                   onChange={handleCpfChange}
                 />
-
                 <CustomInput
                   icon={<CiCalendarDate size={20} color="#1f3b57" />}
                   type="date"
                   label="Sua Data de Nascimento"
-                  placeholder="Digite sua data de nascimento"
                   onChange={(e) => setNascimento(e.target.value)}
                 />
               </div>
             </div>
 
-            <h2 className="text-[26px] flex items-center gap-3 m-3 whitespace-nowrap bg-gradient-to-r tracking-wider from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans">
+            <h2 className="text-[26px] flex items-center gap-3 m-3 bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans">
               <FaDog size={20} color="#1f3b57" />
               Cadastro do Pet
             </h2>
@@ -134,54 +128,50 @@ export default function Register() {
                   <PiMedalDuotone size={20} color="#1f3b57" />
                   Pedigree
                 </h4>
-
                 <div className="flex gap-4">
                   <label className="flex items-center gap-1 text-[18px] font-bold text-[#1f3b57] cursor-pointer">
                     <input
                       type="radio"
                       name="pedigree"
                       checked={pedigree === "sim"}
-                      onChange={(e) => setPedigree(e.target.checked)}
+                      onChange={() => setPedigree("sim")}
                       className="appearance-none w-4 h-4 border border-gray-400 rounded-full checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57]"
                     />
                     Sim
                   </label>
-
                   <label className="flex items-center gap-1 text-[18px] font-bold text-[#1f3b57] cursor-pointer">
                     <input
                       type="radio"
                       name="pedigree"
                       checked={pedigree === "nao"}
+                      onChange={() => setPedigree("nao")}
                       className="appearance-none w-4 h-4 border border-gray-400 rounded-full checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57]"
-                      onChange={(e) => setPedigree(e.target.checked)}
                     />
                     Não
                   </label>
-
                 </div>
+
                 <h4 className="bg-gradient-to-r flex items-center gap-2 from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px]">
                   <HiChip size={20} color="#1f3b57" />
                   Possui Microchip
                 </h4>
-
                 <div className="flex gap-4">
                   <label className="flex items-center gap-1 text-[18px] font-bold text-[#1f3b57] cursor-pointer">
                     <input
                       type="radio"
                       name="microchip"
                       checked={microchip === "sim"}
-                      onChange={(e) => setMicrochip(e.target.checked)}
+                      onChange={() => setMicrochip("sim")}
                       className="appearance-none w-4 h-4 border border-gray-400 rounded-full checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57]"
                     />
                     Sim
                   </label>
-
                   <label className="flex items-center gap-1 text-[18px] font-bold text-[#1f3b57] cursor-pointer">
                     <input
                       type="radio"
                       name="microchip"
                       checked={microchip === "nao"}
-                      onChange={(e) => setMicrochip(e.target.checked)}
+                      onChange={() => setMicrochip("nao")}
                       className="appearance-none w-4 h-4 border border-gray-400 rounded-full checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57]"
                     />
                     Não
@@ -197,6 +187,7 @@ export default function Register() {
                   placeholder="Digite a idade do seu pet"
                   onChange={(e) => setPetIdade(e.target.value)}
                 />
+
                 <h4 className="bg-gradient-to-r flex items-center gap-2 from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans text-[18px]">
                   <FaTransgender size={20} color="#1f3b57" />
                   Gênero
@@ -207,7 +198,7 @@ export default function Register() {
                       type="radio"
                       name="gender"
                       checked={gender === "femea"}
-                      onChange={(e) => setGender(e.target.checked)}
+                      onChange={() => setGender("femea")}
                       className="appearance-none w-4 h-4 border border-gray-400 rounded-full checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57]"
                     />
                     Fêmea
@@ -217,24 +208,41 @@ export default function Register() {
                       type="radio"
                       name="gender"
                       checked={gender === "macho"}
-                      onChange={(e) => setGender(e.target.checked)}
+                      onChange={() => setGender("macho")}
                       className="appearance-none w-4 h-4 border border-gray-400 rounded-full checked:bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57]"
                     />
                     Macho
                   </label>
                 </div>
+
                 <div className="w-[60%]">
                   <CustomSelect
                     onChange={(e) => setPetRaca(e.target.value)}
                     label="Raça"
-
                     icon={<FaDog size={20} color="#1f3b57" />}
-                    options={["Border Collie", "Pastor Alemão", "Bulldog", "Poodle", "Shih Tzu", "Yorkshire", "Labrador", "Golden Retriever", "Beagle", "Pitbull", "Chihuahua", "Dachshund", "Cocker Spaniel", "Rottweiler", "Schnauzer"]}
+                    options={[
+                      "Border Collie",
+                      "Pastor Alemão",
+                      "Bulldog",
+                      "Poodle",
+                      "Shih Tzu",
+                      "Yorkshire",
+                      "Labrador",
+                      "Golden Retriever",
+                      "Beagle",
+                      "Pitbull",
+                      "Chihuahua",
+                      "Dachshund",
+                      "Cocker Spaniel",
+                      "Rottweiler",
+                      "Schnauzer",
+                    ]}
                   />
                 </div>
               </div>
             </div>
           </form>
+
           <button
             className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] text-white px-6 py-2 mt-6 font-bold text-xl rounded-3xl w-full sm:w-auto h-[50px] transition duration-300 hover:scale-105"
             onClick={handleSubmit}
@@ -242,7 +250,7 @@ export default function Register() {
             Criar Conta
           </button>
         </div>
-      </div >
-    </PageWrapper >
-  )
+      </div>
+    </PageWrapper>
+  );
 }
