@@ -244,7 +244,7 @@ export default function Register() {
           </form>
 
           <button
-            className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] text-white px-6 py-2 mt-6 font-bold text-xl rounded-3xl w-full sm:w-auto h-[50px] transition duration-300 hover:scale-105"
+            className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] text-white px-6 py-2 mt-6 font-bold text-xl rounded-3xl w-full sm:w-auto h-[50px] transition duration-300 hover:scale-105 cursor-pointer"
             onClick={handleSubmit}
           >
             Criar Conta
