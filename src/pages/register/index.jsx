@@ -70,7 +70,10 @@ export default function Register() {
           <form
             className="w-full h-auto flex items-center flex-col gap-4 bg-[#F0F0F0] rounded-2xl p-6 border-1 border-purple-500 shadow-xl shadow-purple-500/50"
           >
-            <h2 className=" text-[26px] flex items-center gap-3 m-3 bg-gradient-to-r tracking-wider from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans"><FaUser size={20} color="#1f3b57" /> Cadastro do Tutor</h2>
+            <h2 className="text-[26px] flex items-center gap-3 m-3 whitespace-nowrap bg-gradient-to-r tracking-wider from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans">
+              <FaUser size={20} color="#1f3b57" />
+              Cadastro do Tutor
+            </h2>
 
             <div className="w-full flex flex-col lg:flex-row gap-6">
               <div className="w-full lg:w-1/2 flex flex-col gap-6">
@@ -112,7 +115,10 @@ export default function Register() {
               </div>
             </div>
 
-            <h2 className=" text-[26px] flex items-center gap-3 m-3 bg-gradient-to-r tracking-wider from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans"><FaDog size={20} color="#1f3b57" /> Cadastro do Pet</h2>
+            <h2 className="text-[26px] flex items-center gap-3 m-3 whitespace-nowrap bg-gradient-to-r tracking-wider from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans">
+              <FaDog size={20} color="#1f3b57" />
+              Cadastro do Pet
+            </h2>
 
             <div className="w-full flex flex-col lg:flex-row gap-6">
               <div className="w-full lg:w-1/2 flex flex-col gap-6">
