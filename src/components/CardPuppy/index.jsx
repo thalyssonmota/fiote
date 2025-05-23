@@ -8,16 +8,18 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useRouter } from "next/router";
 
 
-export default function CardPuppy({dog}) {
-  
-  const router = useRouter()
-      function click(){
-        router.push(`/details/${dog.id}`)
-      }
-  return (
-        
+export default function CardPuppy({ dog, className }) {
 
-    <div onClick={click} className="w-[350px] h-[450px] bg-[#fefefe] max-md:bg-amber-500 rounded-lg flex p-3 shadow-lg shadow-[#1f3b57]">
+  const router = useRouter()
+  function click() {
+    router.push(`/details/${dog.id}`)
+  }
+  return (
+
+    <div
+      onClick={click}
+      className={`w-[350px] h-[450px] bg-[#fefefe] rounded-lg flex p-3 shadow-lg shadow-[#1f3b57] mx-auto ${className}`}
+    >
       <div className="h-full w-full flex flex-col">
         <div className=" h-[60%] w-full  rounded-t-lg snape-x">
           <img
