@@ -1,32 +1,28 @@
-
 import CustomInput from "@/components/CustomInput";
 import PageWrapper from "@/components/PageWrapper";
 import { MdOutlineEmail } from "react-icons/md";
-import { FaUser } from "react-icons/fa";
-import { FaDog } from "react-icons/fa";
+import { FaUser, FaDog, FaTransgender } from "react-icons/fa";
 import { CiCalendarDate } from "react-icons/ci";
-import { FaTransgender } from "react-icons/fa";
 import { PiMedalDuotone } from "react-icons/pi";
 import { GoPencil } from "react-icons/go";
 import CustomSelect from "@/components/CustomSelect";
 import { HiChip } from "react-icons/hi";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import { redirect } from "next/dist/server/api-utils";
 import { useRouter } from "next/router";
-
-// ...imports (sem alterações)
 
 export default function Register() {
   const router = useRouter();
 
   const [cpf, setCpf] = useState("");
-  const [pedigree, setPedigree] = useState(""); // "sim" ou "nao"
-  const [gender, setGender] = useState(""); // "femea" ou "macho"
-  const [microchip, setMicrochip] = useState(""); // "sim" ou "nao"
+  const [pedigree, setPedigree] = useState("");
+  const [gender, setGender] = useState("");
+  const [microchip, setMicrochip] = useState("");
 
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [confirmarSenha, setConfirmarSenha] = useState("");
   const [nascimento, setNascimento] = useState("");
   const [petNome, setPetNome] = useState("");
   const [petIdade, setPetIdade] = useState("");
@@ -35,10 +31,17 @@ export default function Register() {
   const handleSubmit = () => {
     if (!nome) return toast.error("Preencha o nome");
     if (!email) return toast.error("Preencha o email");
-    if (!cpf) return toast.error("Preencha o CPF");
+    if (!senha) return toast.error("Crie uma senha");
+    if (!confirmarSenha) return toast.error("Confirme sua senha");
+    if (senha !== confirmarSenha) return toast.error("As senhas não coincidem");
+    if (!cpf || cpf.replace(/\D/g, "").length !== 11) return toast.error("CPF inválido");
     if (!nascimento) return toast.error("Preencha a data de nascimento");
+
     if (!petNome) return toast.error("Preencha o nome do pet");
     if (!petIdade) return toast.error("Preencha a idade do pet");
+    if (!gender) return toast.error("Selecione o gênero do pet");
+    if (!pedigree) return toast.error("Informe se o pet tem pedigree");
+    if (!microchip) return toast.error("Informe se o pet possui microchip");
     if (!petRaca) return toast.error("Selecione a raça");
 
     toast.success("Conta criada com sucesso!");
@@ -46,15 +49,11 @@ export default function Register() {
   };
 
   const handleCpfChange = (e) => {
-    let value = e.target.value.replace(/\D/g, ""); // Remove não números
-    value = value.slice(0, 11); // Limita a 11 dígitos
-
-    // Aplica a máscara
+    let value = e.target.value.replace(/\D/g, "").slice(0, 11);
     value = value
       .replace(/(\d{3})(\d)/, "$1.$2")
       .replace(/(\d{3})(\d)/, "$1.$2")
       .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
-
     setCpf(value);
   };
 
@@ -67,7 +66,7 @@ export default function Register() {
             <GoPencil size={26} color="#1f3b57" /> Cadastre-se
           </h1>
 
-          <form className="w-full flex flex-col gap-4 p-6 rounded-2xl border-1 border-purple-500 shadow-xl shadow-purple-500/50 bg-[#f0f0f0]">
+          <form onSubmit={(e) => e.preventDefault()} className="w-full flex flex-col gap-4 p-6 rounded-2xl border-1 border-purple-500 shadow-xl shadow-purple-500/50 bg-[#f0f0f0]">
             <h2 className="text-[26px] flex items-center gap-3 m-3 bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans">
               <FaUser size={20} color="#1f3b57" />
               Cadastro do Tutor
@@ -89,6 +88,13 @@ export default function Register() {
                   placeholder="Digite seu email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
+                <CustomInput
+                  icon={<GoPencil size={20} color="#1f3b57" />}
+                  type="password"
+                  label="Senha"
+                  placeholder="Crie uma senha"
+                  onChange={(e) => setSenha(e.target.value)}
+                />
               </div>
 
               <div className="w-full lg:w-1/2 flex flex-col gap-6">
@@ -105,6 +111,13 @@ export default function Register() {
                   type="date"
                   label="Sua Data de Nascimento"
                   onChange={(e) => setNascimento(e.target.value)}
+                />
+                <CustomInput
+                  icon={<GoPencil size={20} color="#1f3b57" />}
+                  type="password"
+                  label="Confirmar Senha"
+                  placeholder="Confirme sua senha"
+                  onChange={(e) => setConfirmarSenha(e.target.value)}
                 />
               </div>
             </div>
