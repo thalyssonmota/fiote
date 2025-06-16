@@ -46,7 +46,7 @@ export default function Login() {
           {/* 🔥 Botão de Entrar */}
           <button className="w-full py-2 bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] text-[#f0f0f0] font-bold rounded-full transition duration-300 hover:scale-105 cursor-pointer font-sans text-[18px]"
             onClick={handleLogin}>
-            LOGIN
+            Login
           </button>
 
           <div className="flex flex-col sm:flex-row gap-2 items-center justify-center text-center">
