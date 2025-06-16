@@ -3,8 +3,7 @@ import CustomInput from "@/components/CustomInput";
 import PageWrapper from "@/components/PageWrapper";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaApple } from "react-icons/fa";
+import { FaFacebookSquare, FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
 export default function Login() {
@@ -32,6 +31,11 @@ export default function Login() {
             placeholder="Digite sua senha"
           />
 
+          {/* 🔥 Botão de Entrar */}
+          <button className="w-full py-2 bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] text-[#f0f0f0] font-bold rounded-full transition duration-300 hover:scale-105">
+            Entrar
+          </button>
+
           <div className="flex flex-col sm:flex-row gap-2 items-center justify-center text-center">
             <h5 className="text-[16px] bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans">
               Esqueceu sua senha?
@@ -53,19 +57,27 @@ export default function Login() {
             </button>
           </div>
 
-          <button className="flex items-center justify-center gap-3 text-[16px] tracking-wider font-bold font-sans w-full rounded-full cursor-pointer transition duration-300 hover:scale-105">
+          {/* 🔥 Separador */}
+          <div className="flex items-center w-full gap-4">
+            <hr className="flex-grow border-gray-300" />
+            <span className="text-gray-500 font-semibold text-sm">ou</span>
+            <hr className="flex-grow border-gray-300" />
+          </div>
+
+          {/* 🔥 Botões Sociais */}
+          <button className="flex items-center justify-center gap-3 bg-white border border-gray-300 py-2 px-4 text-[16px] tracking-wider font-bold font-sans w-full rounded-full transition duration-300 hover:scale-105">
             <FcGoogle size={24} />
-            <p className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent">Login com Google</p>
+            <p className="text-[#1f3b57]">Login com Google</p>
           </button>
 
-          <button className="flex items-center justify-center gap-3 text-[16px]  tracking-wider font-bold font-sans w-full rounded-full cursor-pointer transition duration-300 hover:scale-105">
+          <button className="flex items-center justify-center gap-3 bg-white border border-gray-300 py-2 px-4 text-[16px] tracking-wider font-bold font-sans w-full rounded-full transition duration-300 hover:scale-105">
             <FaFacebookSquare size={24} color="#1877F2" />
-            <p className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent">Login com Facebook</p>
+            <p className="text-[#1f3b57]">Login com Facebook</p>
           </button>
 
-          <button className="flex items-center justify-center gap-3 text-[16px]  tracking-wider font-bold font-sans w-full rounded-full cursor-pointer transition duration-300 hover:scale-105">
+          <button className="flex items-center justify-center gap-3 bg-white border border-gray-300 py-2 px-4 text-[16px] tracking-wider font-bold font-sans w-full rounded-full transition duration-300 hover:scale-105">
             <FaApple size={24} color="#000000" />
-            <p className="bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent">Login com Apple</p>
+            <p className="text-[#1f3b57]">Login com Apple</p>
           </button>
         </div>
       </div>
