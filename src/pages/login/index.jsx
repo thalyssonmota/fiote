@@ -5,10 +5,14 @@ import { MdOutlineEmail } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { FaFacebookSquare, FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import { useRouter } from "next/router";
+import  React from "react";
+import { useState } from "react";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
 
   const router = useRouter();
 
@@ -21,6 +25,7 @@ export default function Login() {
 
   return (
     <PageWrapper showButton={false}>
+      <ToastContainer />
       <div className="w-full min-h-screen flex items-center justify-center px-4 py-12 tracking-wider">
         <div className="w-full sm:w-[90%] md:w-[70%] lg:w-[50%] xl:w-[40%] 2xl:w-[35%] bg-[#f0f0f0] py-10 px-6 md:px-12 rounded-2xl shadow-lg flex flex-col items-center gap-8">
           <h1 className="text-[32px] md:text-[36px] text-center bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] bg-clip-text text-transparent font-bold font-sans">
@@ -33,6 +38,8 @@ export default function Login() {
             type="email"
             label="Usuário ou Email"
             placeholder="Digite seu email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
 
           <CustomInput
@@ -41,6 +48,8 @@ export default function Login() {
             type="password"
             label="Senha"
             placeholder="Digite sua senha"
+            onChange={(e) => setSenha(e.target.value)}
+            value={senha}
           />
 
           {/* 🔥 Botão de Entrar */}
