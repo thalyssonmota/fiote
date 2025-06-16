@@ -5,8 +5,20 @@ import { MdOutlineEmail } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { FaFacebookSquare, FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 export default function Login() {
+
+  const router = useRouter();
+
+  const handleLogin = () => {
+    if (!email) return toast.error("Preencha o email");
+    if (!senha) return toast.error("Preencha a senha");
+    toast.success("Login realizado com sucesso!");
+    router.push("/dogs");
+  };
+
   return (
     <PageWrapper showButton={false}>
       <div className="w-full min-h-screen flex items-center justify-center px-4 py-12 tracking-wider">
@@ -32,8 +44,9 @@ export default function Login() {
           />
 
           {/* 🔥 Botão de Entrar */}
-          <button className="w-full py-2 bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] text-[#f0f0f0] font-bold rounded-full transition duration-300 hover:scale-105 cursor-pointer font-sans text-[18px]">
-            Entrar
+          <button className="w-full py-2 bg-gradient-to-r from-pink-500 via-purple-500 to-[#1f3b57] text-[#f0f0f0] font-bold rounded-full transition duration-300 hover:scale-105 cursor-pointer font-sans text-[18px]"
+            onClick={handleLogin}>
+            LOGIN
           </button>
 
           <div className="flex flex-col sm:flex-row gap-2 items-center justify-center text-center">
